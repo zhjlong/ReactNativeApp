@@ -17,9 +17,10 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 const TabNavigatorItem = TabNavigator.Item;
 
-import MinePage from '../../ROOMinePage/component/index.js';
-import ClassifyPage from '../../ROOClassifyPage/component/index.js';
 import HomePage from './HomePage.js';
+import ClassifyPage from '../../ROOClassifyPage/component/index.js';
+import CartPage from '../../ROOCartPage/component/index.js';
+import MinePage from '../../ROOMinePage/component/index.js';
 import SearchComp from '../../ROOCommon/component/SearchComp.js';
 
 const TAB_NORMAL_HOME = require('../images/home_ic_normal.png');
@@ -140,10 +141,10 @@ class TabBar extends Component {
         //return <CommunityPage />
         break;
       case 'Cart':
-        return(
-                    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}><Text>{tabName}</Text></View>
-        )
-        //return <CartPage />
+        //return(
+        //            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}><Text>{tabName}</Text></View>
+        //)
+        return <CartPage />
         break;
       case 'Mine':
         return <MinePage />

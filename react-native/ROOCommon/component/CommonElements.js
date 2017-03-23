@@ -45,7 +45,7 @@ class TextTextStyle extends Component {
 class VerticalLine extends Component{
     render(){
         return (
-          <View style={[styles.vertical,{height:this.props.height}]}></View>
+          <View style={[styles.vertical,{height:this.props.height,backgroundColor:this.props.color}]}></View>
         );
     }
 }
@@ -56,7 +56,7 @@ class VerticalLine extends Component{
 class HorizontalLine extends Component{
     render(){
         return (
-            <View style={[styles.horizontal,{width:this.props.width}]}></View>
+            <View style={[styles.horizontal,{width:this.props.widths}]}></View>
         );
     }
 }
@@ -91,8 +91,7 @@ const styles = StyleSheet.create({
         fontSize:12,
     },
     vertical:{
-        width:1,
-        backgroundColor:'#F0F0F0',
+        width:1
     },
     horizontal:{
         height:1,

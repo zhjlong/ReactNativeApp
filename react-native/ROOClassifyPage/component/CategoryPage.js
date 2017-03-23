@@ -12,9 +12,15 @@ import {
     TouchableOpacity,
     ScrollView,
 } from 'react-native';
+const logo = require('../../ROOCommon/imgs/logo.jpeg');
+const messageIcon = require('../../ROOCommon/imgs/message_icon.png');
+
 const leftData = require('./../data/leftCategoryData');
 const rightData = require('./../data/rightData');
 const VerticalLine = require('../../ROOCommon/component/CommonElements.js').VerticalLine;
+const HorizontalLine = require('../../ROOCommon/component/CommonElements.js').HorizontalLine;
+
+const SearchComp = require('../../ROOCommon/component/SearchComp').SearchComp;
 class CategoryComp extends Component {
     constructor(props){
         super(props);
@@ -85,17 +91,27 @@ class CategoryComp extends Component {
     }
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.left}>
-                    <ScrollView showVerticalScrollIndicater={true}>
-                        {this.leftRenderRow()}
-                    </ScrollView>
+            <View style={{flex:1}}>
+                <View style={[styles.flexDirection_row,styles.bar]}>
+                    <Image style={{width:100,height:50,marginLeft:5,marginBottom:5}} source={logo}/>
+                    <SearchComp />
+                    <TouchableOpacity onPress={() => alert('message')}>
+                        <Image style={{width:25,height:25,marginRight:5}} source={messageIcon}/>
+                    </TouchableOpacity>
                 </View>
-                <VerticalLine/>
-                <View style={styles.right}>
-                    <ScrollView showVerticalScrollIndicater={false}>
-                        {this.rightRenderRow()}
-                    </ScrollView>
+                <HorizontalLine />
+                <View style={styles.container}>
+                    <View style={styles.left}>
+                        <ScrollView showsVerticalScrollIndicator={false}>
+                            {this.leftRenderRow()}
+                        </ScrollView>
+                    </View>
+                    <VerticalLine color='#757575'/>
+                    <View style={styles.right}>
+                        <ScrollView showVerticalScrollIndicator={false}>
+                            {this.rightRenderRow()}
+                        </ScrollView>
+                    </View>
                 </View>
             </View>
         );
@@ -106,6 +122,15 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:'white',
+        flexDirection:'row',
+    },
+    bar:{
+        height:50,
+        backgroundColor:'#FFF',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    flexDirection_row:{
         flexDirection:'row',
     },
     leftRenderRow:{

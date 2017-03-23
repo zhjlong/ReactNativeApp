@@ -1,5 +1,5 @@
 /**
- *create by zhujianlong 2017.3.22
+ *create by zhujianlong 2017.3.23
  */
 
 import React, { Component } from 'react';
@@ -10,15 +10,15 @@ import {
     View,
     Image
 } from 'react-native';
-import CategoryComp from './CategoryPage.js';
-class ClassifyPage extends Component {
+import CartComp from './CartPage.js';
+class CartPage extends Component {
     constructor(){
         super();
     }
     render() {
         return (
             <View style={styles.container}>
-                <CategoryComp />
+                <CartComp />
             </View>
         );
     }
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
 });
-module.exports = ClassifyPage;
+module.exports = CartPage;
