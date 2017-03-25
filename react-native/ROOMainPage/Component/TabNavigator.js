@@ -19,6 +19,7 @@ const TabNavigatorItem = TabNavigator.Item;
 
 import HomePage from './HomePage.js';
 import ClassifyPage from '../../ROOClassifyPage/component/index.js';
+import CommunityPage from '../../ROOCommunityPage/component/index.js';
 import CartPage from '../../ROOCartPage/component/index.js';
 import MinePage from '../../ROOMinePage/component/index.js';
 import SearchComp from '../../ROOCommon/component/SearchComp.js';
@@ -135,15 +136,9 @@ class TabBar extends Component {
         )
         break;
       case 'Community':
-        return(
-                    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}><Text>{tabName}</Text></View>
-        )
-        //return <CommunityPage />
+        return <CommunityPage />
         break;
       case 'Cart':
-        //return(
-        //            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}><Text>{tabName}</Text></View>
-        //)
         return <CartPage />
         break;
       case 'Mine':

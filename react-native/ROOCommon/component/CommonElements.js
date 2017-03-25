@@ -65,7 +65,7 @@ class GreaterThanSignComp extends Component{
     render(){
         return(
           <View style={[styles.flexDirection_row,styles.greaterthanview]}>
-              <Text style={{fontSize:16,color:"#333333"}}>{this.props.typeText}</Text>
+              <Text style={{fontSize:14,color:"#333333"}}>{this.props.typeText}</Text>
               <View style={{flex:1}}></View>
               <Text style={{fontSize:12,color:'#999999'}}>{this.props.explainText}</Text>
               <Image style={{width:12,height:12,marginLeft:5}} source={GreaterThanIcon}/>
