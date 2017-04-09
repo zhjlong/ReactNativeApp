@@ -21,7 +21,7 @@ import HomePage from './HomePage.js';
 import ClassifyPage from '../../ROOClassifyPage/component/index.js';
 import CommunityPage from '../../ROOCommunityPage/component/index.js';
 import CartPage from '../../ROOCartPage/component/index.js';
-import MinePage from '../../ROOMinePage/component/index.js';
+import MinePage from '../../ROOMinePage/component/MineLogin.js';
 import SearchComp from '../../ROOCommon/component/SearchComp.js';
 
 const TAB_NORMAL_HOME = require('../images/home_ic_normal.png');
@@ -127,24 +127,25 @@ class TabBar extends Component {
     switch (tabName) {
       case 'Home':
         return(
-            <HomePage />
+            <HomePage navigator={this.props.navigator}/>
         )
         break;
       case 'Classify':
         return(
-            <ClassifyPage />
+            <ClassifyPage navigator={this.props.navigator}/>
         )
         break;
       case 'Community':
-        return <CommunityPage />
+        return <CommunityPage navigator={this.props.navigator}/>
         break;
       case 'Cart':
-        return <CartPage />
+        return <CartPage navigator={this.props.navigator}/>
         break;
       case 'Mine':
-        return <MinePage />
+        return <MinePage navigator={this.props.navigator}/>
         break;
       default:
+        break;
     }
   }
 

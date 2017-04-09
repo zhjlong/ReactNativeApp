@@ -17,10 +17,12 @@ import {
 class ImagesTextStyle extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Image style={styles.img} source={this.props.image}/>
-                <Text style={styles.text}>{this.props.text}</Text>
-            </View>
+            <TouchableOpacity style={{flex:1}} onPress={this.props._press}>
+                <View style={styles.container}>
+                    <Image style={styles.img} source={this.props.image}/>
+                    <Text style={styles.text}>{this.props.text}</Text>
+                </View>
+            </TouchableOpacity>
         );
     }
 }

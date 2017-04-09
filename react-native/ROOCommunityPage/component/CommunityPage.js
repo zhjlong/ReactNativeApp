@@ -76,7 +76,7 @@ class CommunityComp extends Component {
             <View style={{flex:1}}>
                 <View style={styles.community_bar}>
                     <View style={styles.logo}>
-                        <Image style={{width:100,height:50}} source={logo}/>
+                        <Image style={{width:110,height:50}} source={logo}/>
                     </View>
                     <Text style={{fontSize:16}}>袋鼠小课堂</Text>
                     <View style={styles.publish_message}>

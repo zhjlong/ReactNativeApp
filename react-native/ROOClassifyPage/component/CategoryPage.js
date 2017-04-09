@@ -49,9 +49,7 @@ class CategoryComp extends Component {
                 </TouchableOpacity>
             )
         }
-        return (
-            leftDom
-        );
+        return (leftDom);
     }
     /**
      * 右边导航--一行三条数据
@@ -61,9 +59,9 @@ class CategoryComp extends Component {
         for (var i = 0 ; i < rightData[this.state.selectCategoryIndex][index].length ; i++){
             rowItemDom.push(
                 <View key={i} style={{align:'center'}}>
-                    <Image source={{uri:'http://img5.imgtn.bdimg.com/it/u=4277696380,1302117107&fm=23&gp=0.jpg'}}
-                           style={{width: 50, height: 70,borderWidth:1}} resizeMode={'cover'}></Image>
-                    <Text style={{marginTop:10}}>
+                    <Image source={{uri: rightData[this.state.selectCategoryIndex][index][i].img}}
+                           style={{width: 40, height: 60}} resizeMode={'cover'}></Image>
+                    <Text style={{marginTop:10,fontSize:13,textAlign:'center'}}>
                         {rightData[this.state.selectCategoryIndex][index][i].name}
                     </Text>
                 </View>
@@ -93,7 +91,7 @@ class CategoryComp extends Component {
         return (
             <View style={{flex:1}}>
                 <View style={[styles.flexDirection_row,styles.bar]}>
-                    <Image style={{width:100,height:50,marginLeft:5,marginBottom:5}} source={logo}/>
+                    <Image style={{width:110,height:50,marginLeft:5,marginBottom:5}} source={logo}/>
                     <SearchComp />
                     <TouchableOpacity onPress={() => alert('message')}>
                         <Image style={{width:25,height:25,marginRight:5}} source={messageIcon}/>
@@ -135,6 +133,7 @@ const styles = StyleSheet.create({
     },
     leftRenderRow:{
         height:50,
+        fontSize:13,
         justifyContent:'center',
         alignItems:'center',
     },

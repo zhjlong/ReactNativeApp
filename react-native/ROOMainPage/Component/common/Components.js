@@ -10,9 +10,12 @@ import {
     Text,
     View,
     Image,
+    Dimensions,
     TouchableOpacity,
+    TouchableHighlight,
 } from 'react-native';
 
+var viewWidth = Dimensions.get('window').width;
 /**
  * 图文卡片组件
  */
@@ -33,11 +36,21 @@ class CardComponent extends Component {
 class ProductShowComp extends Component{
     render(){
         return (
-            <View style={styles.product}>
-                <Image style={styles.product_img} source={this.props.image}/>
-                <Text numberOfLines={2} style={styles.product_text}>beiens 贝恩施 智能音乐故事可弹奏写字板彩色画画板 18月以上</Text>
-                <Text style={{alignSelf:'center',fontSize:12}}>¥138</Text>
-            </View>
+            <TouchableHighlight onPress={this.props.onPress}>
+                <View style={styles.product}>
+                    <Image style={styles.product_img} source={{uri:this.props.image}}/>
+                    <Text numberOfLines={2} style={styles.product_text}>{this.props.details}</Text>
+                    <View style={{flexDirection:'row',alignSelf:'center'}}>
+                        <Text style={{fontSize:12}}>
+                            ¥<Text style={{fontSize:13}}>{this.props.marketPrice}</Text>
+                        </Text>
+                        <View style={{marginLeft:5}}>
+                            <Text style={{fontSize:11}}>{this.props.memberPrice}</Text>
+                            <View style={{width:28,height:1,backgroundColor:'#E01A3B',marginTop:-7}}></View>
+                        </View>
+                    </View>
+                </View>
+            </TouchableHighlight>
         );
     }
 }
@@ -49,7 +62,7 @@ const styles = StyleSheet.create({
         paddingTop:10,
     },
     product:{
-        width:110,
+        width:viewWidth/3,
         margin:5,
     },
     flexDirection_row:{
@@ -70,15 +83,15 @@ const styles = StyleSheet.create({
         marginTop:5,
     },
     product_img:{
-        width:80,
-        height:80,
+        width:90,
+        height:90,
         alignSelf:'center',
         marginTop:5,
     },
     product_text:{
         fontSize:12,
         marginLeft:15,
-        marginRight:15,
+        marginRight:10,
         alignSelf:'center',
     }
 });

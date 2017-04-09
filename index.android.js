@@ -4,7 +4,7 @@
    AppRegistry
  } from 'react-native';
  var { NativeModules } = require('react-native');
- import TabBar from './react-native/ROOMainPage/Component/TabNavigator.js';
+ import TabBar from './react-native/ROOMainPage/Component/index.js';
  class HelloWorld extends React.Component {
    render() {
      return (
